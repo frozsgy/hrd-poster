@@ -1,18 +1,18 @@
 <!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="utf-8">
-<title>The world is changed by your example</title>
+<title>Teach me how to be a peacemaker</title>
 <link href="./css/msic.css" rel="stylesheet" type="text/css" />
 <!-- 
-International Human Rights Day Poster Maker
+World Peace Day Facebook Cover Photo Creator
 Coded and designed by Mustafa Ozan ALPAY
-TurkMSIC NTSDD, December 2013
+TurkMSIC NTSDD, September 2014
 If you have any questions and suggestions please feel free to contact me by frozsgy [at] gmail [dot] com
 
 Special thanks to Mustafa Temizyurek and Monika Szamosova
 -->
-</head>
 </head>
 
 <body>
@@ -25,35 +25,17 @@ Special thanks to Mustafa Temizyurek and Monika Szamosova
   
 <?php
 //Get the uploaded picture 
-$foto=@$_FILES['foto']['tmp_name'];
+$id=@$_GET['id'];
+$y=@$_GET['y'];
 //Die if the picture is not jpeg, gif or png, or too large
-if ((($_FILES["foto"]["type"] == "image/gif") || ($_FILES["foto"]["type"] == "image/jpeg") || ($_FILES["foto"]["type"] == "image/jpg") || ($_FILES["foto"]["type"] == "image/pjpeg") || ($_FILES["foto"]["type"] == "image/x-png") || ($_FILES["foto"]["type"] == "image/png")) && ($_FILES["foto"]["size"] > 10000)) { 
+if (is_numeric($y) && $id) { 
 // Load the stamp and the photo to apply the watermark to
-$stamp = imagecreatefrompng('stamp.png');
-$stamp2 = imagecreatefrompng('stamp2.png');
+$stamp = imagecreatefrompng('stamp3.png');
+$foto='uploads/src/'.$id;
 $im = imagecreatefromjpeg($foto);
 $imagex=imagesx($im);
 $imagey=imagesy($im);
-//Resize the picture
-if($imagex > $imagey) {
-	//if the image is horizontal
-	$kucultmeorani=880/$imagey;
-	$kucukx=$kucultmeorani*$imagex;
-	$kucuky=880;
-}
-else {
-	//if the image is vertical
-	$kucultmeorani=850/$imagex;
-	$kucukx=850;
-	$kucuky=$kucultmeorani*$imagey;	
-}
-//Convert it to black and white
-imagefilter($im, IMG_FILTER_GRAYSCALE);
-//imagefilter($im, IMG_FILTER_CONTRAST, -100);
-
 // Set the margins for the stamp and get the height/width of the stamp image
-$marge_right = 0;
-$marge_bottom = 0;
 $sx = imagesx($stamp);
 $sy = imagesy($stamp);
 
@@ -61,19 +43,16 @@ $sy = imagesy($stamp);
 // width to calculate positioning of the stamp. 
     
 	//create an empty image file
-	$dst = imagecreatetruecolor($kucukx, $kucuky);
+	$dst = imagecreatetruecolor(851, 315);
 	//copy our black & white picture to the empty image file and resize it
-    imagecopyresampled($dst, $im, 0, 0, 0, 0, $kucukx, $kucuky, $imagex, $imagey);
-//check if we have the scorp logo checked on the upload page
-$scorplogovarmi=@$_POST['scorplogo'];
-if($scorplogovarmi == '1') {
-//we have it, so let's paste it
+   imagecopyresampled($dst, $im, 0, 0, 0, $y, 851, 351, 851, 351);
 
 imagecopy($dst, $stamp, 0, 0, 0, 0, imagesx($stamp), imagesy($stamp));
 
-}
+
+
 //finally add the image that has the text we want
-imagecopy($dst, $stamp2, $kucukx - imagesx($stamp2) - $marge_right, $kucuky - imagesy($stamp2) - $marge_bottom, 0, 0, imagesx($stamp2), imagesy($stamp2));
+//imagecopy($dst, $stamp2, $kucukx - imagesx($stamp2) - $marge_right, $kucuky - imagesy($stamp2) - $marge_bottom, 0, 0, imagesx($stamp2), imagesy($stamp2));
 
 // Output and free memory
 //header('Content-type: image/jpeg');
@@ -82,14 +61,14 @@ imagecopy($dst, $stamp2, $kucukx - imagesx($stamp2) - $marge_right, $kucuky - im
 //get the ip address of the uploader
 $ip=$_SERVER['REMOTE_ADDR'];
 //create a name with the timestamp, md5 of the ip and a random number
-$nome=time().md5($ip).rand(1,999).'.jpg';
+$nome=$id;
 //create a jpeg file of the image and save it
 imagejpeg($dst, 'uploads/'.$nome);
 //remove the image from the cache so we won't have memory problems
 imagedestroy($dst);
 //voila! give the image to the user
-echo '<p>Your poster is ready to share! You can save the picture below or you can use this link to share your picture: <input type="text" readonly="readonly" value="http://hrd.turkmsic.net/uploads/'.$nome.'" onClick="this.select();"> <br /><a href="index.php">Create a new poster</a> </p><p>';
-echo '<img src="uploads/'.$nome.'" width="910"></p>';
+echo '<p>Your cover photo is ready to share! You can save the picture below or you can use this link to share your picture: <input type="text" readonly="readonly" value="http://wpd.turkmsic.net/uploads/'.$nome.'" onClick="this.select();"> <br /><a href="index.php">Create a new cover photo</a> </p><p>';
+echo '<img src="uploads/'.$nome.'"></p>';
 }
 else {
 	//the image has problems

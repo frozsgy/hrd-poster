@@ -9,10 +9,18 @@ body {
 /*	border-bottom: 1px solid #d7d7d7;*/
 }
 a {
+	color: #0070c0;
 	font-weight: bold;
 	transition: color 0.2s ease-out;
 	text-decoration:none;
 }
+a:visited {
+	color: #0070c0;
+	font-weight: bold;
+	transition: color 0.2s ease-out;
+	text-decoration:none;
+}
+
 
 .baslik {
 	color: #0070c0;
@@ -59,7 +67,7 @@ input:focus {
 	border-radius: 3px;
 }
 .ana2 {
-	width: 910px;
+	width: 850px;
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 4px;
@@ -71,7 +79,7 @@ input:focus {
 }
 .ana {
 	background-color: #ffffff;
-	width: 930px;
+	width: 870px;
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 0px;
@@ -90,7 +98,7 @@ input:focus {
 	background:url(../img/turkmsic.png);
 	background-repeat:no-repeat;
 	height: 90px;
-	width: 930px;
+	width: 870px;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -120,7 +128,7 @@ input:focus {
 #copyright {
 	background: #f2f2f2;
 	height: 50px;
-	width: 930px;
+	width: 870px;
 	margin-right: auto;
 	margin-left: auto;
 	border-style: solid;
@@ -132,4 +140,16 @@ input:focus {
 	font:Arial, Helvetica, sans-serif;
 	text-align:center;
 	vertical-align:middle;
+}
+.cropper {
+    opacity: .5;
+    background: #222;
+	background-image:url(../stamp3.png);
+	background-repeat:no-repeat;
+
+}
+
+.croppable-container {
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
 }
