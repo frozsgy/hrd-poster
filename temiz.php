@@ -17,36 +17,36 @@
 $foto=@$_FILES['foto']['tmp_name'];
 if ((($_FILES["foto"]["type"] == "image/gif") || ($_FILES["foto"]["type"] == "image/jpeg") || ($_FILES["foto"]["type"] == "image/jpg") || ($_FILES["foto"]["type"] == "image/pjpeg") || ($_FILES["foto"]["type"] == "image/x-png") || ($_FILES["foto"]["type"] == "image/png")) && ($_FILES["foto"]["size"] > 10000)) {
   switch ($_POST['stamp']) {
-  case "1": $stamp2 = imagecreatefrompng('1.png'); break;
-  case "2": $stamp2 = imagecreatefrompng('2.png'); break;
-  case "3": $stamp2 = imagecreatefrompng('3.png'); break;
-  case "4": $stamp2 = imagecreatefrompng('4.png'); break;
-  case "5": $stamp2 = imagecreatefrompng('5.png'); break;
-  case "6": $stamp2 = imagecreatefrompng('6.png'); break;
-  case "7": $stamp2 = imagecreatefrompng('7.png'); break;
-  case "8": $stamp2 = imagecreatefrompng('8.png'); break;
-  case "9": $stamp2 = imagecreatefrompng('9.png'); break;
-  case "10": $stamp2 = imagecreatefrompng('10.png'); break;
-  case "11": $stamp2 = imagecreatefrompng('11.png'); break;
-  case "12": $stamp2 = imagecreatefrompng('12.png'); break;
-  case "13": $stamp2 = imagecreatefrompng('13.png'); break;
-  case "14": $stamp2 = imagecreatefrompng('14.png'); break;
-  case "15": $stamp2 = imagecreatefrompng('15.png'); break;
-  case "16": $stamp2 = imagecreatefrompng('16.png'); break;
-  case "17": $stamp2 = imagecreatefrompng('17.png'); break;
-  case "18": $stamp2 = imagecreatefrompng('18.png'); break;
-  case "19": $stamp2 = imagecreatefrompng('19.png'); break;
-  case "20": $stamp2 = imagecreatefrompng('20.png'); break;
-  case "21": $stamp2 = imagecreatefrompng('21.png'); break;
-  case "22": $stamp2 = imagecreatefrompng('22.png'); break;
-  case "23": $stamp2 = imagecreatefrompng('23.png'); break;
-  case "24": $stamp2 = imagecreatefrompng('24.png'); break;
-  case "25": $stamp2 = imagecreatefrompng('25.png'); break;
-  case "26": $stamp2 = imagecreatefrompng('26.png'); break;
-  case "27": $stamp2 = imagecreatefrompng('27.png'); break;
-  case "28": $stamp2 = imagecreatefrompng('28.png'); break;
-  case "29": $stamp2 = imagecreatefrompng('29.png'); break;
-  case "30": $stamp2 = imagecreatefrompng('30.png'); break;
+  case "1": $stamp2 = imagecreatefrompng('./stamps/1.png'); break;
+  case "2": $stamp2 = imagecreatefrompng('./stamps/2.png'); break;
+  case "3": $stamp2 = imagecreatefrompng('./stamps/3.png'); break;
+  case "4": $stamp2 = imagecreatefrompng('./stamps/4.png'); break;
+  case "5": $stamp2 = imagecreatefrompng('./stamps/5.png'); break;
+  case "6": $stamp2 = imagecreatefrompng('./stamps/6.png'); break;
+  case "7": $stamp2 = imagecreatefrompng('./stamps/7.png'); break;
+  case "8": $stamp2 = imagecreatefrompng('./stamps/8.png'); break;
+  case "9": $stamp2 = imagecreatefrompng('./stamps/9.png'); break;
+  case "10": $stamp2 = imagecreatefrompng('./stamps/10.png'); break;
+  case "11": $stamp2 = imagecreatefrompng('./stamps/11.png'); break;
+  case "12": $stamp2 = imagecreatefrompng('./stamps/12.png'); break;
+  case "13": $stamp2 = imagecreatefrompng('./stamps/13.png'); break;
+  case "14": $stamp2 = imagecreatefrompng('./stamps/14.png'); break;
+  case "15": $stamp2 = imagecreatefrompng('./stamps/15.png'); break;
+  case "16": $stamp2 = imagecreatefrompng('./stamps/16.png'); break;
+  case "17": $stamp2 = imagecreatefrompng('./stamps/17.png'); break;
+  case "18": $stamp2 = imagecreatefrompng('./stamps/18.png'); break;
+  case "19": $stamp2 = imagecreatefrompng('./stamps/19.png'); break;
+  case "20": $stamp2 = imagecreatefrompng('./stamps/20.png'); break;
+  case "21": $stamp2 = imagecreatefrompng('./stamps/21.png'); break;
+  case "22": $stamp2 = imagecreatefrompng('./stamps/22.png'); break;
+  case "23": $stamp2 = imagecreatefrompng('./stamps/23.png'); break;
+  case "24": $stamp2 = imagecreatefrompng('./stamps/24.png'); break;
+  case "25": $stamp2 = imagecreatefrompng('./stamps/25.png'); break;
+  case "26": $stamp2 = imagecreatefrompng('./stamps/26.png'); break;
+  case "27": $stamp2 = imagecreatefrompng('./stamps/27.png'); break;
+  case "28": $stamp2 = imagecreatefrompng('./stamps/28.png'); break;
+  case "29": $stamp2 = imagecreatefrompng('./stamps/29.png'); break;
+  case "30": $stamp2 = imagecreatefrompng('./stamps/30.png'); break;
   }
 
   switch ($_FILES['foto']['type']) {
